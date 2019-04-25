@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fire
   - MovingPlatform
+  - GM
   layers:
   - Default
   - TransparentFX
