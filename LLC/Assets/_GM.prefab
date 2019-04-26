@@ -68,6 +68,8 @@ MonoBehaviour:
     type: 3}
   spawnPoint: {fileID: 6254456393034751398}
   spawnDelay: 2
+  spawnPrefab: {fileID: 5674404695401280177, guid: 78a09795a7d8ff24fbf45f445240b190,
+    type: 3}
 --- !u!1 &4240107187019686679
 GameObject:
   m_ObjectHideFlags: 0
