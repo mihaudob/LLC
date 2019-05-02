@@ -19,7 +19,7 @@ public class GameMaster : MonoBehaviour
     public int spawnDelay = 2;
     public Transform spawnPrefab;
 
-    public IEnumerator RespawnPlayer ()
+    public IEnumerator RespawnPlayer (Player player)
     {
         yield return new WaitForSeconds(spawnDelay);
         Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
@@ -29,7 +29,8 @@ public class GameMaster : MonoBehaviour
 
     public static void KillPlayer (Player player)
     {
-        Destroy (player.gameObject);
-        gm.StartCoroutine(gm.RespawnPlayer());
+        player.gameObject.GetComponent<Animator>().Play("Explode",-1);
+        Destroy (player.gameObject, 0.2f);  // unfortunately hardcoded
+        gm.StartCoroutine(gm.RespawnPlayer(player));
     }
 }

@@ -22,10 +22,23 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void DamagePlayer (int damage )
+    public void DamagePlayer (int damage)
     {
         playerStats.Health -= damage;
         if (playerStats.Health <= 0)
+        {
+            GameMaster.KillPlayer(this);
+        }
+    }
+
+    public void Respawn()
+    {
+        // TODO reset health and other stuff + handle players death (maybe reset points?)
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Deadly")
         {
             GameMaster.KillPlayer(this);
         }
