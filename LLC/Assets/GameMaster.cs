@@ -18,7 +18,6 @@ public class GameMaster : MonoBehaviour
     public Transform spawnPoint;
     public int spawnDelay = 2;
     public Transform spawnPrefab;
-    public Transform deathPrefab;
 
     public IEnumerator RespawnPlayer (Player player)
     {
@@ -28,18 +27,10 @@ public class GameMaster : MonoBehaviour
         Destroy(clone.gameObject, 3f);
     }
 
-    public IEnumerator DeathAnimation(Player player)
-    {
-        Vector3 playerPosition = player.gameObject.transform.position;
-        Destroy(player.gameObject);
-        Transform death = Instantiate(deathPrefab, playerPosition, new Quaternion());
-        yield return new WaitForSeconds(0.2f);  // hardcoded time of animation
-        Destroy(death.gameObject);
-    }
-
     public static void KillPlayer (Player player)
     {
-        gm.StartCoroutine(gm.DeathAnimation(player));
+        player.gameObject.GetComponent<Animator>().Play("Explode",-1);
+        Destroy (player.gameObject, 0.2f);  // unfortunately hardcoded
         gm.StartCoroutine(gm.RespawnPlayer(player));
     }
 }
