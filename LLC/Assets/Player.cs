@@ -8,13 +8,11 @@ public class Player : MonoBehaviour
     public class PlayerStats
     {
         public int Health = 100;
-        public int lives = 3;
-        public int coins = 0;
     }
 
     public PlayerStats playerStats = new PlayerStats();
 
-    public int fallBoundary = -5;
+    public int fallBoundary = -10;
 
     private void Update()
     {
@@ -30,7 +28,6 @@ public class Player : MonoBehaviour
         if (playerStats.Health <= 0)
         {
             GameMaster.KillPlayer(this);
-            playerStats.lives -= 1;
         }
     }
 
@@ -44,11 +41,6 @@ public class Player : MonoBehaviour
         if (col.gameObject.tag == "Deadly")
         {
             GameMaster.KillPlayer(this);
-        }
-        if (col.gameObject.tag == "Coin")
-        {
-            playerStats.coins += 1;
-            GameMaster.Destroy(GameObject.FindGameObjectWithTag("Coin"));
         }
     }
 }

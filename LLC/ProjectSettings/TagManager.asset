@@ -8,7 +8,6 @@ TagManager:
   - MovingPlatform
   - GM
   - Deadly
-  - Coin
   layers:
   - Default
   - TransparentFX
