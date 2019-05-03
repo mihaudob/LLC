@@ -19,6 +19,8 @@ public class GameMaster : MonoBehaviour
     public int spawnDelay = 2;
     public Transform spawnPrefab;
     public Transform deathPrefab;
+    public Transform coinPrefab;
+    public Transform coinPoint;
 
     public IEnumerator RespawnPlayer (Player player)
     {
@@ -37,9 +39,25 @@ public class GameMaster : MonoBehaviour
         Destroy(death.gameObject);
     }
 
+    public IEnumerator CoinCollectAnimation()
+    {
+        Instantiate(coinPrefab, coinPoint.position, coinPoint.rotation);
+        yield return false;
+    }
+    
+    public static void CollectCoin()
+    {
+        gm.StartCoroutine(gm.CoinCollectAnimation());
+    }
+
     public static void KillPlayer (Player player)
     {
         gm.StartCoroutine(gm.DeathAnimation(player));
         gm.StartCoroutine(gm.RespawnPlayer(player));
+    }
+
+    public static void KillEnemy (Enemy enemy)
+    {
+        Destroy(enemy.gameObject);
     }
 }

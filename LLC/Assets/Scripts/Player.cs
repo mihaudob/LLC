@@ -29,8 +29,8 @@ public class Player : MonoBehaviour
         playerStats.Health -= damage;
         if (playerStats.Health <= 0)
         {
-            GameMaster.KillPlayer(this);
             playerStats.lives -= 1;
+            GameMaster.KillPlayer(this);
         }
     }
 
@@ -48,7 +48,12 @@ public class Player : MonoBehaviour
         if (col.gameObject.tag == "Coin")
         {
             playerStats.coins += 1;
+            GameMaster.CollectCoin();
             GameMaster.Destroy(GameObject.FindGameObjectWithTag("Coin"));
+        }
+        if (col.gameObject.tag == "Enemy")
+        {
+            DamagePlayer(25);
         }
     }
 }

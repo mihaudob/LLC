@@ -9,6 +9,7 @@ TagManager:
   - GM
   - Deadly
   - Coin
+  - Enemy
   layers:
   - Default
   - TransparentFX

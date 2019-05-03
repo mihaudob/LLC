@@ -70,6 +70,11 @@ MonoBehaviour:
   spawnDelay: 2
   spawnPrefab: {fileID: 5674404695401280177, guid: 78a09795a7d8ff24fbf45f445240b190,
     type: 3}
+  deathPrefab: {fileID: 7619944834380227175, guid: ec1eebc20b39403468c66c2be213488c,
+    type: 3}
+  coinPrefab: {fileID: 985064622787053775, guid: 7c14c585123057c4c81a51b0152f21a9,
+    type: 3}
+  coinPoint: {fileID: 0}
 --- !u!1 &4240107187019686679
 GameObject:
   m_ObjectHideFlags: 0
