@@ -729,6 +729,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyVampire
       objectReference: {fileID: 0}
+    - target: {fileID: 1336485181231658, guid: e5cb27b0420804e41a0f1be6d053e93a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4680297020996514, guid: e5cb27b0420804e41a0f1be6d053e93a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.27
@@ -777,6 +781,50 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1385996612}
+    - target: {fileID: 1175540034529654, guid: e5cb27b0420804e41a0f1be6d053e93a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708561174707460, guid: e5cb27b0420804e41a0f1be6d053e93a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595461437202594, guid: e5cb27b0420804e41a0f1be6d053e93a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784817957322688, guid: e5cb27b0420804e41a0f1be6d053e93a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691075404680330, guid: e5cb27b0420804e41a0f1be6d053e93a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758294537162524, guid: e5cb27b0420804e41a0f1be6d053e93a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1570233492000418, guid: e5cb27b0420804e41a0f1be6d053e93a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142507075492518, guid: e5cb27b0420804e41a0f1be6d053e93a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566834247137454, guid: e5cb27b0420804e41a0f1be6d053e93a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914859070616324, guid: e5cb27b0420804e41a0f1be6d053e93a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1464517943638742, guid: e5cb27b0420804e41a0f1be6d053e93a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5cb27b0420804e41a0f1be6d053e93a, type: 3}
 --- !u!1 &494698169
@@ -887,7 +935,7 @@ GameObject:
   - component: {fileID: 530873048}
   - component: {fileID: 530873049}
   - component: {fileID: 530873050}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Saw
   m_TagString: Deadly
   m_Icon: {fileID: 0}
