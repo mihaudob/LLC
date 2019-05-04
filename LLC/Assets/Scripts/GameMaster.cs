@@ -43,6 +43,14 @@ public class GameMaster : MonoBehaviour
         Destroy(death.gameObject);
     }
 
+    public IEnumerator EnemyDeathAnim(Enemy enemy)
+    {
+        Vector3 enemyPosition = enemy.gameObject.transform.position;
+        Transform death = Instantiate(deathPrefab, enemyPosition, new Quaternion());
+        yield return new WaitForSeconds(0.2f);
+        Destroy(death.gameObject);
+    }
+
     public IEnumerator CoinCollectAnimation()
     {
         Instantiate(coinPrefab, coinPoint.position, coinPoint.rotation);
@@ -62,6 +70,7 @@ public class GameMaster : MonoBehaviour
 
     public static void KillEnemy (Enemy enemy)
     {
+        gm.StartCoroutine(gm.EnemyDeathAnim(enemy));
         Destroy(enemy.gameObject);
     }
 }
