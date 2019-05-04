@@ -51,8 +51,8 @@ public class Weapon : MonoBehaviour
     {
         Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
         Vector2 hitPointPosition = new Vector2(hitPoint.position.x, hitPoint.position.y);
-        RaycastHit2D hit = Physics2D.Raycast(hitPointPosition, mousePosition - hitPointPosition, 3, whatToHit);
-        Debug.DrawLine(hitPointPosition, (mousePosition - hitPointPosition) * 3, Color.cyan);
+        RaycastHit2D hit = Physics2D.Raycast(hitPointPosition, mousePosition - hitPointPosition, 1, whatToHit);
+        Debug.DrawLine(hitPointPosition, (mousePosition - hitPointPosition) * 1, Color.cyan);
         if (hit.collider != null)
         {
             Debug.DrawLine(hitPointPosition, hit.point, Color.red);
