@@ -1,10 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour
 {
     public static GameMaster gm;
+    public Transform playerPrefab;
+    public Transform spawnPoint;
+    public int spawnDelay = 2;
+    public Transform spawnPrefab;
+    public Transform deathPrefab;
+    public Transform coinPrefab;
+    public Transform coinPoint;
 
     private void Start()
     {
@@ -14,18 +22,12 @@ public class GameMaster : MonoBehaviour
         }
     }
 
-    public Transform playerPrefab;
-    public Transform spawnPoint;
-    public int spawnDelay = 2;
-    public Transform spawnPrefab;
-    public Transform deathPrefab;
-    public Transform coinPrefab;
-    public Transform coinPoint;
-
     public IEnumerator RespawnPlayer (Player player)
     {
         yield return new WaitForSeconds(spawnDelay);
-        Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
+        player.gameObject.SetActive(true);
+        player.gameObject.transform.position = spawnPoint.position;
+        player.Respawn();
         Transform clone = Instantiate(spawnPrefab, spawnPoint.position, spawnPoint.rotation) as Transform;
         Destroy(clone.gameObject, 3f);
     }
@@ -33,7 +35,9 @@ public class GameMaster : MonoBehaviour
     public IEnumerator DeathAnimation(Player player)
     {
         Vector3 playerPosition = player.gameObject.transform.position;
-        Destroy(player.gameObject);
+        player.playerStats.health = 0;
+        player.gameObject.GetComponent<Animator>().Play("Walk");
+        player.gameObject.SetActive(false);
         Transform death = Instantiate(deathPrefab, playerPosition, new Quaternion());
         yield return new WaitForSeconds(0.2f);  // hardcoded time of animation
         Destroy(death.gameObject);

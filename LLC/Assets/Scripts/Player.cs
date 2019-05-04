@@ -1,33 +1,78 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
+[System.Serializable]
+public class PlayerStats
+{
+    public int startHealth = 100;
+    public int startLives = 3;
+    public int startCoins = 0;
+
+    [System.NonSerialized]
+    public int health;
+    [System.NonSerialized]
+    public int lives;
+    [System.NonSerialized]
+    public int coins;
+
+    public PlayerStats()
+    {
+        health = startHealth;
+        lives = startLives;
+        coins = startCoins;
+    }
+}
 
 public class Player : MonoBehaviour
 {
-    [System.Serializable]
-    public class PlayerStats
-    {
-        public int Health = 100;
-        public int lives = 3;
-        public int coins = 0;
-    }
+    
 
     public PlayerStats playerStats = new PlayerStats();
-
     public int fallBoundary = -5;
+
+    private Text health;
+    private Text lives;
+    private Text coins;
+
+    private void Start()
+    {
+        health = GameObject.Find("Health").GetComponent<Text>();
+        lives = GameObject.Find("Lives").GetComponent<Text>();
+        coins = GameObject.Find("Coins").GetComponent<Text>();
+    }
 
     private void Update()
     {
         if (transform.position.y <= fallBoundary)
         {
-            DamagePlayer (9999999);
+            DamagePlayer(99999);
         }
+        UpdateUI();
+    }
+
+    private void OnDisable()
+    {
+        UpdateUI();
+    }
+
+    private void UpdateUI()
+    {
+        health.text = playerStats.health.ToString();
+        lives.text = playerStats.lives.ToString();
+        coins.text = playerStats.coins.ToString();
+    }
+
+    public PlayerStats GetPlayerStats()
+    {
+        return playerStats;
     }
 
     public void DamagePlayer (int damage)
     {
-        playerStats.Health -= damage;
-        if (playerStats.Health <= 0)
+        playerStats.health -= damage;
+        if (playerStats.health <= 0)
         {
             playerStats.lives -= 1;
             GameMaster.KillPlayer(this);
@@ -36,24 +81,24 @@ public class Player : MonoBehaviour
 
     public void Respawn()
     {
-        // TODO reset health and other stuff + handle players death (maybe reset points?)
+        playerStats.health = new PlayerStats().health;
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Deadly")
+        switch (col.gameObject.tag)
         {
-            GameMaster.KillPlayer(this);
-        }
-        if (col.gameObject.tag == "Coin")
-        {
-            playerStats.coins += 1;
-            GameMaster.CollectCoin();
-            GameMaster.Destroy(GameObject.FindGameObjectWithTag("Coin"));
-        }
-        if (col.gameObject.tag == "Enemy")
-        {
-            DamagePlayer(25);
+            case "Deadly":
+                DamagePlayer(1000);
+                break;
+            case "Coin":
+                playerStats.coins += 1;
+                GameMaster.CollectCoin();
+                GameMaster.Destroy(GameObject.FindGameObjectWithTag("Coin"));
+                break;
+            case "Enemy":
+                DamagePlayer(25);
+                break;
         }
     }
 }
