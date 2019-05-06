@@ -17,7 +17,7 @@ public class Weapon : MonoBehaviour
 
     private void Awake()
     {
-        hitPoint = transform.FindChild("HitPoint");
+        hitPoint = transform.Find("HitPoint");
         if (hitPoint == null)
         {
             Debug.LogError("No hitPoint");
