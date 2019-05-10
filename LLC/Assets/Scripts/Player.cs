@@ -86,15 +86,20 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
+        GameObject coin;
+        Transform coinPoint;
         switch (col.gameObject.tag)
         {
             case "Deadly":
                 DamagePlayer(1000);
                 break;
             case "Coin":
+                coin = col.gameObject;
+                coinPoint = coin.GetComponentInChildren<Transform>();
                 playerStats.coins += 1;
-                GameMaster.CollectCoin();
-                GameMaster.Destroy(GameObject.FindGameObjectWithTag("Coin"));
+                GameMaster.CollectCoin(coinPoint);
+                // GameMaster.Destroy(GameObject.FindGameObjectWithTag("Coin"));
+                GameMaster.Destroy(coin);
                 break;
             case "Enemy":
                 DamagePlayer(25);

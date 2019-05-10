@@ -51,15 +51,15 @@ public class GameMaster : MonoBehaviour
         Destroy(death.gameObject);
     }
 
-    public IEnumerator CoinCollectAnimation()
+    public IEnumerator CoinCollectAnimation(Transform coinPoint)
     {
         Instantiate(coinPrefab, coinPoint.position, coinPoint.rotation);
         yield return false;
     }
     
-    public static void CollectCoin()
+    public static void CollectCoin(Transform coinPoint)
     {
-        gm.StartCoroutine(gm.CoinCollectAnimation());
+        gm.StartCoroutine(gm.CoinCollectAnimation(coinPoint));
     }
 
     public static void KillPlayer (Player player)
