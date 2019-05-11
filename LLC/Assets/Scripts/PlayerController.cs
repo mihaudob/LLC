@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
             anim.Play("Idle");
         }
         anim.SetFloat("Speed", Mathf.Abs(theRB.velocity.x));
-        anim.SetBool("Grounded", isGrounded);
+        anim.SetBool("Ground", isGrounded);
         
     }
 }
