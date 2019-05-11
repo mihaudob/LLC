@@ -31,9 +31,12 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        isGrounded = false;
         isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, whatIsGround);
+
+
         if (Input.GetKey(left))
         {
             theRB.velocity = new Vector2(-moveSpeed, theRB.velocity.y);
@@ -51,20 +54,33 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(jump) && isGrounded)
         {
             theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+            
         }
 
 
         if (theRB.velocity.x < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
+
         }else if(theRB.velocity.x > 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
 
         }
-
+        if (Input.GetKey(specialMove))
+        {
+            anim.Play("Attack");
+        }
+        if (theRB.velocity.y != 0)
+        {
+            anim.SetFloat("vSpeed", theRB.velocity.y);
+        }
+        else
+        {
+            anim.Play("Idle");
+        }
         anim.SetFloat("Speed", Mathf.Abs(theRB.velocity.x));
         anim.SetBool("Grounded", isGrounded);
-        anim.SetFloat("vSpeed", theRB.velocity.y);
+        
     }
 }

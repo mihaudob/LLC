@@ -7,7 +7,7 @@ public class Weapon : MonoBehaviour
     public float hitRate = 0;
     public int Damage = 50;
     public LayerMask whatToHit;
-
+    public KeyCode specialMove;
     Player player;
 
     float timeToHit = 1;
@@ -31,15 +31,15 @@ public class Weapon : MonoBehaviour
     {
         if (hitRate == 0)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetKey(specialMove))
             {
-                player.gameObject.GetComponent<Animator>().Play("Attack");
+                //player.gameObject.GetComponent<Animator>().Play("Attack");
                 Hit();
             }
         }
         else
         {
-            if (Input.GetButton ("Fire1") && Time.time > timeToHit)
+            if (Input.GetKey(specialMove) && Time.time > timeToHit)
             {
                 timeToHit = Time.time + 1 / hitRate;
                 Hit();
