@@ -1276,7 +1276,7 @@ PrefabInstance:
     - target: {fileID: 1872223607722632218, guid: f5019a753983ee2489786a8f48eca778,
         type: 3}
       propertyPath: m_GravityScale
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2065580481, guid: f5019a753983ee2489786a8f48eca778, type: 3}
       propertyPath: specialMove
@@ -2035,7 +2035,7 @@ Camera:
   far clip plane: 1000
   field of view: 90
   orthographic: 1
-  orthographic size: 9
+  orthographic size: 8.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2100,9 +2100,10 @@ MonoBehaviour:
   - {fileID: 1385996612}
   - {fileID: 674101763}
   smoothTime: 0.5
-  minZoom: 6
-  maxZoom: 11
-  offset: {x: 0, y: 0, z: 0}
+  minZoom: 7
+  maxZoom: 10
+  zoomLimiter: 10
+  offset: {x: 0, y: 2, z: -4}
 --- !u!1 &560198747
 GameObject:
   m_ObjectHideFlags: 0
@@ -6172,7 +6173,7 @@ PrefabInstance:
     - target: {fileID: 1872223607722632218, guid: f5019a753983ee2489786a8f48eca778,
         type: 3}
       propertyPath: m_GravityScale
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2065580481, guid: f5019a753983ee2489786a8f48eca778, type: 3}
       propertyPath: specialMove

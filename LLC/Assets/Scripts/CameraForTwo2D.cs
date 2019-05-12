@@ -2,18 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Camera))]
 public class CameraForTwo2D : MonoBehaviour
 {
 
     public List<Transform> targets;
     public float smoothTime = .5f;
 
-    public int minZoom = 6;
-    public int maxZoom = 11;
-
+    public float minZoom = 7;
+    public float maxZoom = 10;
+    public float zoomLimiter;
     public Vector3 offset;
 
     private Vector3 velocity;
+    private Camera cam;
+
+    private void Start()
+    {
+        cam = GetComponent<Camera>();
+    }
 
     private void LateUpdate()
     {
@@ -27,8 +34,8 @@ public class CameraForTwo2D : MonoBehaviour
 
     private void Zoom()
     {
-        Debug.Log(GetGreatestDistance());
-
+        float newZoom = Mathf.Lerp (minZoom, maxZoom, GetGreatestDistance() / zoomLimiter);
+        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, newZoom, Time.deltaTime) ;
     }
 
     private void Move()
