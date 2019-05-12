@@ -71,14 +71,12 @@ public class PlayerController : MonoBehaviour
         {
             anim.Play("Attack");
         }
+
         if (theRB.velocity.y != 0)
         {
             anim.SetFloat("vSpeed", theRB.velocity.y);
         }
-        else
-        {
-            anim.Play("Idle");
-        }
+
         anim.SetFloat("Speed", Mathf.Abs(theRB.velocity.x));
         anim.SetBool("Ground", isGrounded);
         
