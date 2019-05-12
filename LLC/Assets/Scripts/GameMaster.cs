@@ -36,7 +36,7 @@ public class GameMaster : MonoBehaviour
     {
         Vector3 playerPosition = player.gameObject.transform.position;
         player.playerStats.health = 0;
-        player.gameObject.GetComponent<Animator>().Play("Walk");
+        // player.gameObject.GetComponent<Animator>().Play("Walk");
         player.gameObject.SetActive(false);
         Transform death = Instantiate(deathPrefab, playerPosition, new Quaternion());
         yield return new WaitForSeconds(0.2f);  // hardcoded time of animation
