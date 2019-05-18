@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 1181829005463014472}
   - component: {fileID: 8773938455176098430}
   m_Layer: 10
-  m_Name: Second Player
+  m_Name: Ghost
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

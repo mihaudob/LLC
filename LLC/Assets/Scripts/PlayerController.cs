@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             theRB.velocity = new Vector2(0, theRB.velocity.y);
+            
         }
 
 
@@ -75,6 +76,7 @@ public class PlayerController : MonoBehaviour
         if (theRB.velocity.y != 0)
         {
             anim.SetFloat("vSpeed", theRB.velocity.y);
+            Debug.Log(theRB.velocity.y);
         }
 
         anim.SetFloat("Speed", Mathf.Abs(theRB.velocity.x));
