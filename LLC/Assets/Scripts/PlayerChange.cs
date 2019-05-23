@@ -5,14 +5,15 @@ using UnityEngine;
 public class PlayerChange : MonoBehaviour
 {
     public KeyCode changePlayers;
-    int characterSelect = 1;
-    GameObject mage, ghost, maceMan;
+    public int characterSelect = 1;
+    public int characterNumber = 3;
+    public GameObject mage;
+    public GameObject ghost;
+    public GameObject maceMan;
     // Start is called before the first frame update
     void Start()
     {
-        mage = GameObject.Find("Mage");
-        ghost = GameObject.Find("Ghost");
-        maceMan = GameObject.Find("MaceMan");
+
     }
 
     void Update()
@@ -20,28 +21,53 @@ public class PlayerChange : MonoBehaviour
         if (Input.GetKeyDown(changePlayers))
         {
             characterSelect++;
-            if(characterSelect == 4)
+            if(characterSelect == characterNumber + 1)
             {
                 characterSelect = 1;
             }
         }
         if(characterSelect == 1)
         {
-            mage.SetActive(true);
-            ghost.SetActive(false);
-            maceMan.SetActive(false);
+            mage.GetComponent<SpriteRenderer>().enabled = true;
+            ghost.GetComponent<SpriteRenderer>().enabled = false;
+            maceMan.GetComponent<SpriteRenderer>().enabled = false;
+
+            mage.GetComponent<Player>().enabled = true;
+            ghost.GetComponent<Player>().enabled = false;
+            maceMan.GetComponent<Player>().enabled = false;
+
+            mage.GetComponent<Animator>().enabled = true;
+            ghost.GetComponent<Animator>().enabled = false;
+            maceMan.GetComponent<Animator>().enabled = false;
         }
         if (characterSelect == 2)
         {
-            mage.SetActive(false);
-            ghost.SetActive(true);
-            maceMan.SetActive(false);
+            mage.GetComponent<SpriteRenderer>().enabled = false;
+            ghost.GetComponent<SpriteRenderer>().enabled = true;
+            maceMan.GetComponent<SpriteRenderer>().enabled = false;
+
+            mage.GetComponent<Player>().enabled = false;
+            ghost.GetComponent<Player>().enabled = true;
+            maceMan.GetComponent<Player>().enabled = false;
+
+            mage.GetComponent<Animator>().enabled = false;
+            ghost.GetComponent<Animator>().enabled = true;
+            maceMan.GetComponent<Animator>().enabled = false;
         }
         if (characterSelect == 3)
         {
-            mage.SetActive(false);
-            ghost.SetActive(false);
-            maceMan.SetActive(true);
+            mage.GetComponent<SpriteRenderer>().enabled = false;
+            ghost.GetComponent<SpriteRenderer>().enabled = false;
+            maceMan.GetComponent<SpriteRenderer>().enabled = true;
+
+            mage.GetComponent<Player>().enabled = false;
+            ghost.GetComponent<Player>().enabled = false;
+            maceMan.GetComponent<Player>().enabled = true;
+
+            mage.GetComponent<Animator>().enabled = false;
+            ghost.GetComponent<Animator>().enabled = false;
+            maceMan.GetComponent<Animator>().enabled = true;
+
         }
     }
 }
