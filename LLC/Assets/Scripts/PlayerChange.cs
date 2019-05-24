@@ -5,28 +5,40 @@ using UnityEngine;
 public class PlayerChange : MonoBehaviour
 {
     public KeyCode changePlayers;
-    public int characterSelect = 1;
+    public StaticFromMenu staticVariables;
+    public string thiCharacterName = "First";
     public int characterNumber = 3;
     public GameObject mage;
     public GameObject ghost;
     public GameObject maceMan;
+
+    int characterSelected = 1;
+
     // Start is called before the first frame update
     void Start()
     {
+        if(thiCharacterName == "First")
+        {
+            characterSelected = staticVariables.GetPlayerAChoice();
 
+        }
+        else
+        {
+            characterSelected = staticVariables.GetPlayerBChoice();
+        }
     }
 
     void Update()
     {
         if (Input.GetKeyDown(changePlayers))
         {
-            characterSelect++;
-            if(characterSelect == characterNumber + 1)
+            characterSelected++;
+            if(characterSelected == characterNumber + 1)
             {
-                characterSelect = 1;
+                characterSelected = 1;
             }
         }
-        if(characterSelect == 1)
+        if(characterSelected == 1)
         {
             mage.GetComponent<SpriteRenderer>().enabled = true;
             ghost.GetComponent<SpriteRenderer>().enabled = false;
@@ -40,7 +52,7 @@ public class PlayerChange : MonoBehaviour
             ghost.GetComponent<Animator>().enabled = false;
             maceMan.GetComponent<Animator>().enabled = false;
         }
-        if (characterSelect == 2)
+        if (characterSelected == 2)
         {
             mage.GetComponent<SpriteRenderer>().enabled = false;
             ghost.GetComponent<SpriteRenderer>().enabled = true;
@@ -54,7 +66,7 @@ public class PlayerChange : MonoBehaviour
             ghost.GetComponent<Animator>().enabled = true;
             maceMan.GetComponent<Animator>().enabled = false;
         }
-        if (characterSelect == 3)
+        if (characterSelected == 3)
         {
             mage.GetComponent<SpriteRenderer>().enabled = false;
             ghost.GetComponent<SpriteRenderer>().enabled = false;

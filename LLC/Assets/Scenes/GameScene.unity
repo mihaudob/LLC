@@ -557,6 +557,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changePlayers: 274
+  staticVariables: {fileID: 126548680}
+  thiCharacterName: First
+  characterNumber: 3
+  mage: {fileID: 1863382898}
+  ghost: {fileID: 968314423}
+  maceMan: {fileID: 1581048622}
+--- !u!114 &126548680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126548678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36f109ae7d017c54284287c1ba720398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &126548688 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1872223607722632217, guid: f5019a753983ee2489786a8f48eca778,
@@ -579,6 +597,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023740511122689434, guid: d513ec95a47d9364e86d46dde3294709,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7023740511122689436, guid: d513ec95a47d9364e86d46dde3294709,
         type: 3}
@@ -2384,6 +2407,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost
       objectReference: {fileID: 0}
+    - target: {fileID: 692932343796900017, guid: 74bd5bcab7072a642813d0ee74dce082,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 692932343796900023, guid: 74bd5bcab7072a642813d0ee74dce082,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3339,6 +3367,12 @@ Transform:
   m_Father: {fileID: 1786951230}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &968314423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7023740511122689434, guid: d513ec95a47d9364e86d46dde3294709,
+    type: 3}
+  m_PrefabInstance: {fileID: 145238184}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &982221398
 GameObject:
   m_ObjectHideFlags: 0
@@ -3490,6 +3524,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1872223607722632213, guid: f5019a753983ee2489786a8f48eca778,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872223607722632218, guid: f5019a753983ee2489786a8f48eca778,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1872223607722632212, guid: f5019a753983ee2489786a8f48eca778,
         type: 3}
       propertyPath: m_JumpForce
@@ -3509,16 +3553,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1872223607722632213, guid: f5019a753983ee2489786a8f48eca778,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1872223607722632218, guid: f5019a753983ee2489786a8f48eca778,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2065580481, guid: f5019a753983ee2489786a8f48eca778, type: 3}
       propertyPath: specialMove
@@ -6644,7 +6678,7 @@ PrefabInstance:
     - target: {fileID: 692932343796900017, guid: 74bd5bcab7072a642813d0ee74dce082,
         type: 3}
       propertyPath: m_Name
-      value: Second Player
+      value: ORG Second Player
       objectReference: {fileID: 0}
     - target: {fileID: 692932343796900017, guid: 74bd5bcab7072a642813d0ee74dce082,
         type: 3}
@@ -6706,6 +6740,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1181829005463014472, guid: 74bd5bcab7072a642813d0ee74dce082,
+        type: 3}
+      propertyPath: jumpForce
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773938455176098430, guid: 74bd5bcab7072a642813d0ee74dce082,
+        type: 3}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773938455176098430, guid: 74bd5bcab7072a642813d0ee74dce082,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 692932343796900016, guid: 74bd5bcab7072a642813d0ee74dce082,
         type: 3}
       propertyPath: m_Sprite
@@ -6756,21 +6805,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 0.63451433
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181829005463014472, guid: 74bd5bcab7072a642813d0ee74dce082,
-        type: 3}
-      propertyPath: jumpForce
-      value: 27
-      objectReference: {fileID: 0}
-    - target: {fileID: 8773938455176098430, guid: 74bd5bcab7072a642813d0ee74dce082,
-        type: 3}
-      propertyPath: m_Animation
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8773938455176098430, guid: 74bd5bcab7072a642813d0ee74dce082,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 692932344452223926, guid: 74bd5bcab7072a642813d0ee74dce082,
         type: 3}
@@ -7020,6 +7054,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1872223607722632213, guid: f5019a753983ee2489786a8f48eca778,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872223607722632218, guid: f5019a753983ee2489786a8f48eca778,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1872223607722632212, guid: f5019a753983ee2489786a8f48eca778,
         type: 3}
       propertyPath: m_JumpForce
@@ -7039,16 +7083,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1872223607722632213, guid: f5019a753983ee2489786a8f48eca778,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1872223607722632218, guid: f5019a753983ee2489786a8f48eca778,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2065580481, guid: f5019a753983ee2489786a8f48eca778, type: 3}
       propertyPath: specialMove
