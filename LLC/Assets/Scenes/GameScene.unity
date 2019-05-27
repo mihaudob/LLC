@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7632,32 +7632,6 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 27
       objectReference: {fileID: 0}
-    - target: {fileID: 8773938455176098430, guid: 74bd5bcab7072a642813d0ee74dce082,
-        type: 3}
-      propertyPath: m_Animation
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8773938455176098430, guid: 74bd5bcab7072a642813d0ee74dce082,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 692932343796900016, guid: 74bd5bcab7072a642813d0ee74dce082,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 8d02d767af3a84345a8631438b0897a3,
-        type: 3}
-    - target: {fileID: 692932343796900026, guid: 74bd5bcab7072a642813d0ee74dce082,
-        type: 3}
-      propertyPath: m_JumpForce
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 692932343796900026, guid: 74bd5bcab7072a642813d0ee74dce082,
-        type: 3}
-      propertyPath: m_MaxSpeed
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 692932343796900021, guid: 74bd5bcab7072a642813d0ee74dce082,
         type: 3}
       propertyPath: m_Offset.y
@@ -7693,6 +7667,32 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 0.63451433
       objectReference: {fileID: 0}
+    - target: {fileID: 8773938455176098430, guid: 74bd5bcab7072a642813d0ee74dce082,
+        type: 3}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773938455176098430, guid: 74bd5bcab7072a642813d0ee74dce082,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 692932343796900026, guid: 74bd5bcab7072a642813d0ee74dce082,
+        type: 3}
+      propertyPath: m_JumpForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 692932343796900026, guid: 74bd5bcab7072a642813d0ee74dce082,
+        type: 3}
+      propertyPath: m_MaxSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 692932343796900016, guid: 74bd5bcab7072a642813d0ee74dce082,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8d02d767af3a84345a8631438b0897a3,
+        type: 3}
     - target: {fileID: 692932344452223926, guid: 74bd5bcab7072a642813d0ee74dce082,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -7835,6 +7835,12 @@ PrefabInstance:
       propertyPath: deathPrefab
       value: 
       objectReference: {fileID: 7619944834380227175, guid: ec1eebc20b39403468c66c2be213488c,
+        type: 3}
+    - target: {fileID: 1488270857716196108, guid: a97ae09e25667df46bfec37cfad146f9,
+        type: 3}
+      propertyPath: bloodPrefab
+      value: 
+      objectReference: {fileID: 2352407178846588948, guid: 17bc4051cb1f4134babaaf52577a64f2,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a97ae09e25667df46bfec37cfad146f9, type: 3}
