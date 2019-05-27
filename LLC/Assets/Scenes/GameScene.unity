@@ -667,12 +667,12 @@ PrefabInstance:
     - target: {fileID: 7023740511122689436, guid: d513ec95a47d9364e86d46dde3294709,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.7256
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 7023740511122689436, guid: d513ec95a47d9364e86d46dde3294709,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.759095
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8683555514236920163, guid: d513ec95a47d9364e86d46dde3294709,
         type: 3}
@@ -2305,7 +2305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets:
   - {fileID: 513141097}
-  - {fileID: 0}
+  - {fileID: 1499285919}
   smoothTime: 0.5
   minZoom: 7
   maxZoom: 10
@@ -2549,12 +2549,12 @@ PrefabInstance:
     - target: {fileID: 692932343796900023, guid: 74bd5bcab7072a642813d0ee74dce082,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.184
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 692932343796900023, guid: 74bd5bcab7072a642813d0ee74dce082,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.429
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 1181829005463014472, guid: 74bd5bcab7072a642813d0ee74dce082,
         type: 3}
@@ -2622,7 +2622,7 @@ PrefabInstance:
     - target: {fileID: 1872223607722632223, guid: f5019a753983ee2489786a8f48eca778,
         type: 3}
       propertyPath: m_Name
-      value: First Player (1)
+      value: Second Player
       objectReference: {fileID: 0}
     - target: {fileID: 1872223607722632217, guid: f5019a753983ee2489786a8f48eca778,
         type: 3}
@@ -2797,9 +2797,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc691893f01c2d42ab87830b68b2be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changePlayers: 274
+  changePlayers: 115
   staticVariables: {fileID: 681932367}
-  thisCharacterName: First
+  thisCharacterName: Second
   characterNumber: 3
   mageGravity: 2
   maceManGravity: 2
@@ -4138,11 +4138,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   jumpForce: 6
-  left: 276
-  right: 275
-  jump: 273
-  specialMove: 303
-  changePlayers: 274
+  left: 97
+  right: 100
+  jump: 119
+  specialMove: 304
+  changePlayers: 115
   groundCheckPoint: {fileID: 1123286701}
   groundCheckRadius: 0.002
   whatIsGround:
@@ -5844,6 +5844,31 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1181829005463014472, guid: 74bd5bcab7072a642813d0ee74dce082,
+        type: 3}
+      propertyPath: left
+      value: 97
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181829005463014472, guid: 74bd5bcab7072a642813d0ee74dce082,
+        type: 3}
+      propertyPath: right
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181829005463014472, guid: 74bd5bcab7072a642813d0ee74dce082,
+        type: 3}
+      propertyPath: jump
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181829005463014472, guid: 74bd5bcab7072a642813d0ee74dce082,
+        type: 3}
+      propertyPath: specialMove
+      value: 304
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181829005463014472, guid: 74bd5bcab7072a642813d0ee74dce082,
+        type: 3}
+      propertyPath: changePlayers
+      value: 115
+      objectReference: {fileID: 0}
     - target: {fileID: 692932343796900021, guid: 74bd5bcab7072a642813d0ee74dce082,
         type: 3}
       propertyPath: m_Enabled
@@ -7114,6 +7139,31 @@ PrefabInstance:
         type: 3}
       propertyPath: moveSpeed
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8683555514236920163, guid: d513ec95a47d9364e86d46dde3294709,
+        type: 3}
+      propertyPath: left
+      value: 97
+      objectReference: {fileID: 0}
+    - target: {fileID: 8683555514236920163, guid: d513ec95a47d9364e86d46dde3294709,
+        type: 3}
+      propertyPath: right
+      value: 61
+      objectReference: {fileID: 0}
+    - target: {fileID: 8683555514236920163, guid: d513ec95a47d9364e86d46dde3294709,
+        type: 3}
+      propertyPath: jump
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 8683555514236920163, guid: d513ec95a47d9364e86d46dde3294709,
+        type: 3}
+      propertyPath: specialMove
+      value: 304
+      objectReference: {fileID: 0}
+    - target: {fileID: 8683555514236920163, guid: d513ec95a47d9364e86d46dde3294709,
+        type: 3}
+      propertyPath: changePlayers
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 7023740511122689438, guid: d513ec95a47d9364e86d46dde3294709,
         type: 3}
