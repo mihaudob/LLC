@@ -13,7 +13,6 @@ public class GameMaster : MonoBehaviour
     public Transform deathPrefab;
     public Transform coinPrefab;
     public Transform coinPoint;
-    public Transform bloodPrefab;
 
     private void Start()
     {
@@ -57,23 +56,10 @@ public class GameMaster : MonoBehaviour
         Instantiate(coinPrefab, coinPoint.position, coinPoint.rotation);
         yield return false;
     }
-
-    public IEnumerator BloodAnimation(Player player)
-    {
-        Vector3 playerPosition = player.gameObject.transform.position;
-        Transform blood = Instantiate(bloodPrefab, playerPosition, new Quaternion());
-        yield return new WaitForSeconds(0.5f);
-        Destroy(blood.gameObject);
-    }
     
     public static void CollectCoin(Transform coinPoint)
     {
         gm.StartCoroutine(gm.CoinCollectAnimation(coinPoint));
-    }
-
-    public static void ShowBlood(Player player)
-    {
-        gm.StartCoroutine(gm.BloodAnimation(player));
     }
 
     public static void KillPlayer (Player player)
