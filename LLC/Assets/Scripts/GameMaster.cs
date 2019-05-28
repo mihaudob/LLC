@@ -65,7 +65,15 @@ public class GameMaster : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Destroy(blood.gameObject);
     }
-    
+
+    public IEnumerator EnemyBloodAnimation(Enemy enemy)
+    {
+        Vector3 enemyPosition = enemy.gameObject.transform.position;
+        Transform blood = Instantiate(bloodPrefab, enemyPosition, new Quaternion());
+        yield return new WaitForSeconds(0.5f);
+        Destroy(blood.gameObject);
+    }
+
     public static void CollectCoin(Transform coinPoint)
     {
         gm.StartCoroutine(gm.CoinCollectAnimation(coinPoint));
@@ -74,6 +82,11 @@ public class GameMaster : MonoBehaviour
     public static void ShowBlood(Player player)
     {
         gm.StartCoroutine(gm.BloodAnimation(player));
+    }
+
+    public static void EnemyShowBlood(Enemy enemy)
+    {
+        gm.StartCoroutine(gm.EnemyBloodAnimation(enemy));
     }
 
     public static void KillPlayer (Player player)

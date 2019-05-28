@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
 
     public void DamageEnemy(int damage)
     {
+        GameMaster.EnemyShowBlood(this);
         stats.Health -= damage;
         if (stats.Health <= 0)
         {

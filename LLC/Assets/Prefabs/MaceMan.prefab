@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1776569387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.523, y: 0.217, z: 0}
+  m_LocalPosition: {x: 0.661, y: 0.085, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1872223607722632217}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 1872223607722632218}
   - component: {fileID: 1872223607722632219}
   - component: {fileID: 1872223607722632215}
-  - component: {fileID: 2065580481}
+  - component: {fileID: 3571347214289589425}
   m_Layer: 10
   m_Name: MaceMan
   m_TagString: Player
@@ -233,7 +233,7 @@ MonoBehaviour:
     startLives: 3
     startCoins: 0
   fallBoundary: -5
---- !u!114 &2065580481
+--- !u!114 &3571347214289589425
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -242,15 +242,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1872223607722632223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83845eb7690e6cc4eb66a639bac6453a, type: 3}
+  m_Script: {fileID: 11500000, guid: dd2ea07adcee0c84891fc70738eb98ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitRate: 0
-  Damage: 50
-  whatToHit:
-    serializedVersion: 2
-    m_Bits: 2323
+  startTimeBtwAttack: 0.4
   specialMove: 0
+  attackPos: {fileID: 1776569388}
+  whatIsEnemies:
+    serializedVersion: 2
+    m_Bits: 2048
+  attackRange: 0.6
+  damage: 50
 --- !u!1 &1872223607800620139
 GameObject:
   m_ObjectHideFlags: 0

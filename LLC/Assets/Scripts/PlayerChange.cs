@@ -10,7 +10,7 @@ public class PlayerChange : MonoBehaviour
     public int characterNumber = 3;
     public int mageGravity = 2;
     public int maceManGravity = 2;
-    public int ghostGravity = 2;
+    public float ghostGravity = 0.5f;
     public float howHighPutCamera = 1;
     public float howHighPutRest = 1;
     public GameObject mage;
