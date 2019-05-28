@@ -27,8 +27,6 @@ public class PlayerStats
 
 public class Player : MonoBehaviour
 {
-    
-
     public PlayerStats playerStats = new PlayerStats();
     public int fallBoundary = -5;
 
