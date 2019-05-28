@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     private Text health;
     private Text lives;
     private Text coins;
+    private Transform bloodPoint;
 
     private void Start()
     {
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        bloodPoint = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         if (transform.position.y <= fallBoundary)
         {
             DamagePlayer(99999);
@@ -101,6 +103,7 @@ public class Player : MonoBehaviour
                 break;
             case "Enemy":
                 DamagePlayer(25);
+                GameMaster.ShowBlood(this);
                 break;
         }
     }
