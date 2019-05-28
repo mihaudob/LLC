@@ -20,7 +20,8 @@ public class Fireball : MonoBehaviour
         {
             Enemy enemy = other.GetComponent<Enemy>();
             enemy.DamageEnemy(damage);
-        } else if (tagsToIgnore.Contains(other.tag))
+        }
+        if (tagsToIgnore.Contains(other.tag))
         {
             return;
         } else

@@ -69,6 +69,8 @@ public class PlayerChange : MonoBehaviour
             maceMan.GetComponent<Rigidbody2D>().gravityScale = 0;
             ghost.GetComponent<Rigidbody2D>().gravityScale = 0;
             mage.GetComponent<Rigidbody2D>().gravityScale = mageGravity;
+
+            mage.GetComponent<FireballCaster>().enabled = true;
         }
         if (characterSelected == 2)
         {
@@ -96,6 +98,8 @@ public class PlayerChange : MonoBehaviour
             maceMan.GetComponent<Rigidbody2D>().gravityScale = 0;
             mage.GetComponent<Rigidbody2D>().gravityScale = 0;
             ghost.GetComponent<Rigidbody2D>().gravityScale = ghostGravity;
+
+            mage.GetComponent<FireballCaster>().enabled = false;
         }
         if (characterSelected == 3)
         {
@@ -125,6 +129,7 @@ public class PlayerChange : MonoBehaviour
             ghost.GetComponent<Rigidbody2D>().gravityScale = 0;
             maceMan.GetComponent<Rigidbody2D>().gravityScale = maceManGravity;
 
+            mage.GetComponent<FireballCaster>().enabled = false;
         }
     }
 }
