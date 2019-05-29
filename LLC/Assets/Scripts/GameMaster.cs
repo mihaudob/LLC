@@ -13,6 +13,8 @@ public class GameMaster : MonoBehaviour
     public Transform deathPrefab;
     public Transform coinPrefab;
     public Transform coinPoint;
+    public Transform chestPrefab;
+    public Transform chestPoint;
     public Transform bloodPrefab;
 
     private void Start()
@@ -58,6 +60,12 @@ public class GameMaster : MonoBehaviour
         yield return false;
     }
 
+    public IEnumerator ChestCollectAnimation(Transform chestPoint)
+    {
+        Instantiate(chestPrefab, chestPoint.position, chestPoint.rotation);
+        yield return false;
+    }
+
     public IEnumerator BloodAnimation(Player player)
     {
         Vector3 playerPosition = player.gameObject.transform.position;
@@ -77,6 +85,11 @@ public class GameMaster : MonoBehaviour
     public static void CollectCoin(Transform coinPoint)
     {
         gm.StartCoroutine(gm.CoinCollectAnimation(coinPoint));
+    }
+
+    public static void CollectChest(Transform chestPoint)
+    {
+        gm.StartCoroutine(gm.ChestCollectAnimation(chestPoint));
     }
 
     public static void ShowBlood(Player player)
