@@ -88,6 +88,8 @@ public class Player : MonoBehaviour
     {
         GameObject coin;
         Transform coinPoint;
+        GameObject chest;
+        Transform chestPoint;
         switch (col.gameObject.tag)
         {
             case "Deadly":
@@ -104,6 +106,13 @@ public class Player : MonoBehaviour
             case "Enemy":
                 DamagePlayer(25);
                 GameMaster.ShowBlood(this);
+                break;
+            case "Chest":
+                chest = col.gameObject;
+                chestPoint = chest.GetComponentInChildren<Transform>();
+                playerStats.coins += 100;
+                GameMaster.CollectChest(chestPoint);
+                GameMaster.Destroy(chest);
                 break;
         }
     }
