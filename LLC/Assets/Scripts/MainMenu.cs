@@ -15,4 +15,9 @@ public class MainMenu : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
+    public void LoadScene(int SceneNumber)
+    {
+        SceneManager.LoadScene(SceneNumber);
+
+    }
 }
