@@ -63,7 +63,7 @@ public class GameMaster : MonoBehaviour
     public IEnumerator ChestCollectAnimation(Transform chestPoint)
     {
         Instantiate(chestPrefab, chestPoint.position, chestPoint.rotation);
-        yield return false;
+        yield return new WaitForSeconds(5);
     }
 
     public IEnumerator BloodAnimation(Player player)
