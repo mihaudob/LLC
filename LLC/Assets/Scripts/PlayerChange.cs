@@ -12,7 +12,7 @@ public class PlayerChange : MonoBehaviour
     public int maceManGravity = 2;
     public float ghostGravity = 0.5f;
     public float howHighPutCamera = 1;
-    public float howHighPutRest = 1;
+    public float howHighPutRest = 0;
     public GameObject mage;
     public GameObject ghost;
     public GameObject maceMan;
@@ -88,8 +88,8 @@ public class PlayerChange : MonoBehaviour
             maceMan.GetComponent<Player>().enabled = false;
 
             playerPosition.GetComponent<Transform>().position = new Vector2(ghost.GetComponent<Transform>().position.x, ghost.GetComponent<Transform>().position.y + howHighPutCamera);
-            mage.GetComponent<Transform>().position = new Vector2(ghost.GetComponent<Transform>().position.x, ghost.GetComponent<Transform>().position.y + howHighPutRest/2);
-            maceMan.GetComponent<Transform>().position = new Vector2(ghost.GetComponent<Transform>().position.x, ghost.GetComponent<Transform>().position.y + howHighPutRest/2);
+            mage.GetComponent<Transform>().position = new Vector2(ghost.GetComponent<Transform>().position.x, ghost.GetComponent<Transform>().position.y - 1);
+            maceMan.GetComponent<Transform>().position = new Vector2(ghost.GetComponent<Transform>().position.x, ghost.GetComponent<Transform>().position.y - 1);
 
             mage.GetComponent<Animator>().enabled = false;
             ghost.GetComponent<Animator>().enabled = true;
